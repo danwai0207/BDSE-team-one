@@ -1,5 +1,0 @@
-5sec (change date the url doesn't change) 
-http://www.tse.com.tw/zh/page/trading/exchange/MI_5MINS_INDEX.html
-
-1d
-http://www.twse.com.tw/zh/page/trading/exchange/MI_INDEX.html
