@@ -171,3 +171,4 @@ values are functions specifying how to compute the values of the new columns.
 >
 > return:
 >> Table
+>
