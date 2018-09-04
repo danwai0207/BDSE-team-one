@@ -12,7 +12,7 @@
 > 2. 有性別資料的 417734 個
 
 **Users' Gender**
-> <img src="image/gender.png">
+> <img src="image/gender.PNG">
 
 **Users' Age Range**
 > <img src="image/age_range.png">
