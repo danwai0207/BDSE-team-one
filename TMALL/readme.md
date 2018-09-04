@@ -24,12 +24,12 @@
 ### Actions
 
 **Action versus Gender**
-> <img src="image/table-action-gender.png">
+> <img src="image/table-action-gender.PNG">
 
 > <img src="image/action_fq4gender.png">
 
 **Action versus Age Range**
 
-> <img src="image/table-action-age.png">
+> <img src="image/table-action-age.PNG">
 
 > <img src="image/action_fq4age.png">
