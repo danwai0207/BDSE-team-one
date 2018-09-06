@@ -1,5 +1,5 @@
 # Project Framework
-<img src="image/Project Framework.png" width="100%">
+<img src="image/MVC Framework.png" width="100%">
 
 ## Data
 **Task**
@@ -8,8 +8,7 @@
 >> * 預期能做出完整結論的資料
 >> * 目前提案:
 >>> 1. 天貓
->>> 2. 期貨
->>> 3. AIgo ?
+>>> 2. kaggle?
 > 2. 網路爬蟲
 >> * for 天貓，蒐集item_id對應的商品敘述(名稱、圖片、售價、...etc)
 >> * for stock, stock_id, datetime, price, high, low, volume...
