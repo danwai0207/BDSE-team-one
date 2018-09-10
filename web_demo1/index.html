@@ -16,7 +16,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
-
 		function hideURLbar() {
 			window.scrollTo(0, 1);
 		}
@@ -76,15 +75,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li class="menu__item">
 								<a href="#team" class="scroll menu__link">our team</a>
 							</li>
-							<li class="menu__item">
+							<!-- <li class="menu__item">
 								<a href="#contact" class="scroll menu__link">contact</a>
-							</li>
+							</li> -->
 						</ul>
 					</nav>
 				</div>
 			</nav>
 		</div>
 	</div>
+	
 	<!-- //header 標題圖片-->
 	<div class="banner-bg-agileits">
 		<div class="banner-dot">
@@ -103,6 +103,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!-- //banner -->
+	
 	<!-- about -->
 	<div class="jarallax agileits-about agile-section" id="about">
 		<div class="container">
@@ -113,7 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-6 col-sm-6  w3_agileits-about-left">
 					<div class="agile-about-left">
 						<h4 class="agileits-title">Problem Definition</h4>
-						<p>This is dummy text</p>
+						<p>from organizer</p>
 					</div>
 					<div class="w3_agileits-about-bottom">
 					</div>
@@ -147,38 +148,110 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!-- //about -->
+	
 	<!--method / (services)-->
 	<div class="agileits-services agile-section" id="services">
+		
 		<div class="container">
-			<h3 class="agileits-title text-center">Method</h3>
-			<div class="agileits-services-row">
-				<div class="col-md-3 col-sm-6 agileits-services-grids">
-					<div class="service-grid1">
-						<h4>Step1</h4>
-						<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur aut</p>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 agileits-services-grids">
-					<div class="service-grid1">
-						<h4>Step2</h4>
-						<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur aut</p>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 agileits-services-grids">
-					<div class="service-grid1">
-						<h4>Step3</h4>
-						<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur aut</p>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 agileits-services-grids">
-					<div class="service-grid1">
-						<h4>Step4</h4>
-						<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur aut</p>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
+			<h3 class="col-md-offset-2 agileits-title text-center">Method</h3>
+			<!-- BigPicture for structure -->
+			<div class="container" style="padding-bottom:40px ">
+				<img class="col-md-offset-2" src="images/BigPicture.jpg" alt="" />
 			</div>
+			<!-- contain of structure -->
+			<div class="agileits-services-row ">
+				<div class="col-md-3 col-sm-6 agileits-services-grids">
+					<div class="service-grid1">
+						<h4>Data Sources</h4>
+						<p>With the data which organizer provide. 
+							We also try to use web scrapying to find out each item, categorage and merchant id corresponding names. 
+							That can help us has more easy to grouping our data and explain our result.
+						</p>
+						<ul class="w3l-list">
+							<!-- <li>1. Data from download.</li> -->
+							<li><img width="100%" src="images/m1_1.jpg" alt="" /></li>
+							<li></li>
+							<!-- <li>2. Use python's package to scrapying. BeautifulSoup, Requests, .</li> -->
+							<li><img width="100%" src="images/m1_2.jpg" alt="" /></li>
+						</ul>
+
+						<h4>ETL</h4>
+						<p>
+							Use python to do data cleaning.  
+						</p>
+						<ul class="w3l-list">
+								<!-- <li>1. Python </li> -->
+								<li><img width="100%" src="images/m1_2_1.jpg" alt="" /></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 agileits-services-grids">
+					<div class="service-grid1">
+						<h4>Data Storage</h4>
+						<p>
+							We are going to build two system to store our data.
+							One is hadoop ecosystem system, another is relation database.
+							That we can compare our two systems' effectiveness.  
+						</p>
+						<ul class="w3l-list">
+								<!-- <li>1. Hadoop ecosystem with Docker.</li> -->
+								<li><img width="100%" src="images/m2_1_1.jpg" alt="" /></li>
+								<li><img width="100%" src="images/m2_1_2.jpg" alt="" /></li>
+								<li><img width="100%" src="images/m2_1_3.jpg" alt="" /></li>
+								<li></li>
+								<!-- <li>2. RDB .</li> -->
+								<li><img width="100%" src="images/m2_2_1.jpg" alt="" /></li>
+								<li><img width="100%" src="images/m2_2_2.jpg" alt="" /></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 agileits-services-grids">
+					<div class="service-grid1">
+						<h4>Analysis</h4>
+						<p>
+								For first, we use basic infomation to do some describe stastic.
+								To understand how these data compose and help us to find out some property 
+								that we can use to create derivative column to build our model.   
+							</p>
+							<ul class="w3l-list">
+									<!-- <li>1. Python</li> -->
+									<li><img width="100%" src="images/m3_1_1.jpg" alt="" /></li>
+									<li><img width="100%" src="images/m3_1_2.jpg" alt="" /></li>
+									<li></li>
+									<!-- <li>2. Spark with Scala </li> -->
+									<li><img width="100%" src="images/m3_2_1.jpg" alt="" /></li>
+									<li><img width="100%" src="images/m3_2_2.jpg" alt="" /></li>
+							</ul>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 agileits-services-grids">
+					<div class="service-grid1">
+						<h4>Visulation</h4>
+						<p>
+							We chouse Django to be our Web framework to make our development more clean and pythonic.
+							By it's work on server, to connect our database to web.   
+							On the other hand, we use Plotly and Ajax to make our result more impressive.   	
+							</p>
+							<ul class="w3l-list">
+									<!-- <li>1. Python Dango</li> -->
+									<li><img width="100%" src="images/m4_1_1.jpg" alt="" /></li>
+									<li><img width="100%" src="images/m4_1_2.jpg" alt="" /></li>
+									<li></li>
+									<!-- <li>2. HTML, CSS, Javascripe, Ajax, Plotly</li> -->
+									<li><img width="100%" src="images/m4_2_1.jpg" alt="" /></li>
+									<li><img width="100%" src="images/m4_2_2.jpg" alt="" /></li>
+									<li><img width="100%" src="images/m4_2_3.jpg" alt="" /></li>
+							</ul>	
+					</div>
+				</div>
+
+				
+				<div class="clearfix"> </div>
+				
+			</div>
+			
 		</div>
+		
 	</div>
 	<!--//method (services)-->
 
@@ -550,7 +623,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //testimonial -->
 
 	<!-- contact -->
-	<div class="w3ls-contact agile-section" id="contact">
+	<!-- <div class="w3ls-contact agile-section" id="contact">
 		<div class="container">
 			<h3 class="agileits-title text-center">contact us</h3>
 			<div class="contact-right-w3l">
@@ -582,7 +655,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="clearfix"></div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="agileits-map">
 		<h3 class="agileits-title text-center">locate us</h3>
 		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12515.457151767101!2d121.54458384652077!3d25.03604848725822!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xedc006d25a9e35df!2z6LOH562W5pyDIOaVuOS9jeaVmeiCsueglOeptuaJgCDmlbjkvY3kurrmiY3ln7nogrLkuK3lv4M!5e0!3m2!1szh-TW!2stw!4v1535701840398"
@@ -613,11 +686,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!--//footer-->
+	
 	<!-- js -->
 	<script src="js/jquery-2.2.3.min.js"></script>
 	<!-- //js -->
+	
 	<!-- gallery light box -->
 	<script src="js/lightbox-plus-jquery.min.js"></script>
+	
 	<!-- testimonials-->
 	<script src="js/owl.carousel.js"></script>
 	<link href="css/owl.carousel.css" rel="stylesheet">
@@ -636,6 +712,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 	<!-- //requried-jsfiles-for owl -->
 	<!-- //testimonials -->
+	
 	<!-- start-smooth-scrolling -->
 	<script src="js/move-top.js"></script>
 	<script src="js/easing.js"></script>
@@ -643,7 +720,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {
 				event.preventDefault();
-
 				$('html,body').animate({
 					scrollTop: $(this.hash).offset().top
 				}, 1000);
@@ -651,6 +727,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		});
 	</script>
 	<!-- //end-smooth-scrolling -->
+	
 	<!-- smooth-scrolling-of-move-up -->
 	<script>
 		$(document).ready(function () {
@@ -662,11 +739,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				easingType: 'linear' 
 			};
 			*/
-
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
-
 		});
 	</script>
 	<script src="js/SmoothScroll.min.js"></script>
