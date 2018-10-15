@@ -12,6 +12,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
 	<meta name="keywords" content="The final project for iii_BDSE08 Team1." />
+
+	<!--use plotly.js-->
+	<script src="/static/js/plotly-latest.min.js"></script>
 	<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -20,17 +23,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			window.scrollTo(0, 1);
 		}
 	</script>
+
 	<!-- Custom Theme files -->
 	<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+
 	<!-- gallery light box -->
 	<link rel="stylesheet" href="/static/css/lightbox.css">
 	<link href="/static/css/style.css" type="text/css" rel="stylesheet" media="all">
+
 	<!-- font-awesome icons -->
 	<link href="/static/css/font-awesome.css" rel="stylesheet">
 	<!-- //Custom Theme files -->
+
 	<!-- web-fonts -->
 	<!-- logo -->
 	<link href="//fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+
 	<!-- body -->
 	<link href="//fonts.googleapis.com/css?family=Archivo:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!-- //web-fonts -->
@@ -72,7 +80,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 							</li>
 							<li class="menu__item">
-								<a href="#gallery" class="scroll menu__link">Result</a>
+								<a href="#graph" class="scroll menu__link">Result</a>
 							</li>
 							<li class="menu__item">
 								<a href="#team" class="scroll menu__link">About Us</a>
@@ -347,6 +355,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!-- //result  content (package) -->
+
+	<div>
+		<h3 class="agileits-title text-center" id="graph">use of plotly for dynamic graph</h3>
+		<div align="center">
+			<button class="btn vtn-primary" onclick="line_chart('fig', 'open')">open</button>
+			<button class="btn vtn-primary" onclick="line_chart('fig', 'high')">high</button>
+			<button class="btn vtn-primary" onclick="line_chart('fig', 'low')">low</button>
+			<button class="btn vtn-primary" onclick="line_chart('fig', 'close')">close</button>
+			<button class="btn vtn-primary" onclick="candlestick_chart('Candlestick')">all</button>
+		</div>
+		<div id="fig"></div>
+		<div id="Candlestick"></div>
+	</div>
 
 	<!-- result picure (gallery)-->
 	<div class="agile-section gallery" id="gallery">
@@ -721,7 +742,85 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- js -->
 	<script src="/static/js/jquery-2.2.3.min.js"></script>
 	<!-- //js -->
-	
+
+	<!--plotly graph-->
+	<script>
+		function line_chart(id, arg){
+			var ele = document.getElementById(id)
+			var data = []
+			if (arg == 'open')
+				data = {{ open }};
+			else if (arg == "high")
+				data = {{ high }};
+			else if (arg == "low")
+				data = {{ low }};
+			else
+				data = {{ close }};
+
+			var trace = []
+			trace[0] = {
+				x: {{ date|safe }},
+				y: data,
+				type: 'line',
+				name: arg,
+			}
+
+			Plotly.plot(ele, trace)
+		}
+
+		function candlestick_chart(id){
+			var ele = document.getElementById(id)
+
+			var trace = []
+			trace[0] = {
+				x: {{ date|safe }},
+				increasing: {line: {color: 'red'}},
+  				decreasing: {line: {color: 'green'}},
+				open: {{ open }},
+				high: {{ high }},
+				low: {{ low }},
+				close: {{ close }},
+				type: 'candlestick',
+				xaxis: 'x',
+				yaxis: 'y',
+			}
+
+			var layout = {
+				xaxis: {
+				    autorange: true,
+					title: 'Date',
+					rangeselector: {
+						x: 0,
+						y: 1.2,
+						xanchor: 'left',
+						font: {size:8},
+						buttons: [{
+							step: 'month',
+							stepmode: 'backward',
+							count: 1,
+							label: '1 month'
+						}, {
+							step: 'month',
+							stepmode: 'backward',
+							count: 6,
+							label: '6 months'
+						}, {
+							step: 'all',
+							label: 'All dates'
+						}]
+					  }
+				  },
+				yaxis: {
+				    autorange: true,
+				    type: 'linear'
+				},
+			}
+
+			Plotly.plot(ele, trace, layout)
+		}
+
+	</script>
+
 	<!-- gallery light box -->
 	<script src="/static/js/lightbox-plus-jquery.min.js"></script>
 	
