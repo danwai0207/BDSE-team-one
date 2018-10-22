@@ -12,6 +12,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
 	<meta name="keywords" content="The final project for iii_BDSE08 Team1." />
+
+	<!--use plotly.js-->
+	<script src="/static/js/plotly-latest.min.js"></script>
 	<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -20,17 +23,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			window.scrollTo(0, 1);
 		}
 	</script>
+
 	<!-- Custom Theme files -->
 	<link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+
 	<!-- gallery light box -->
 	<link rel="stylesheet" href="/static/css/lightbox.css">
 	<link href="/static/css/style.css" type="text/css" rel="stylesheet" media="all">
+
 	<!-- font-awesome icons -->
 	<link href="/static/css/font-awesome.css" rel="stylesheet">
 	<!-- //Custom Theme files -->
+
 	<!-- web-fonts -->
 	<!-- logo -->
 	<link href="//fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+
 	<!-- body -->
 	<link href="//fonts.googleapis.com/css?family=Archivo:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!-- //web-fonts -->
@@ -72,7 +80,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 							</li>
 							<li class="menu__item">
-								<a href="#gallery" class="scroll menu__link">Result</a>
+								<a href="#graph" class="scroll menu__link">Result</a>
 							</li>
 							<li class="menu__item">
 								<a href="#team" class="scroll menu__link">About Us</a>
@@ -145,9 +153,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li>
 							<span class="w3ls-type fa fa-angle-double-right" aria-hidden="true"></span>Activity log</li>
 						<li>
-							<a class="example-image-link w3-agilepic" href="/static/images/table_1.png" data-lightbox="example-set" data-title=" ">table 1</a>
+							<!-- 資料欄位描述 <a class="example-image-link w3-agilepic" href="/static/images/table_1.png" data-lightbox="example-set" data-title=" ">table 1</a>
 							<a class="example-image-link w3-agilepic" href="/static/images/table_2.png" data-lightbox="example-set" data-title=" ">table 2</a>
-							<a class="example-image-link w3-agilepic" href="/static/images/table_3.png" data-lightbox="example-set" data-title=" ">table 3</a>
+							<a class="example-image-link w3-agilepic" href="/static/images/table_3.png" data-lightbox="example-set" data-title=" ">table 3</a> -->
 						</li>
 							
 					</ul>
@@ -275,7 +283,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--//method (services)-->
 
 	<!-- result content (packages) -->
+		
+		<div class="container" style="padding-bottom:-10px; padding-top:30px">
+			<h3 class="agileits-title text-center">Hadoop Cluster</h3>
+			<img src="/static/images/HadoopCluster1.jpg" width="150%" alt="" class="img-responsive"/>
+		</div>
+
 	<div class="packages agile-section" id="plans">
+		
+
 		<div class="container">
 			<h3 class="agileits-title text-center">Pilot Study</h3>
 			<div class="package-grids gallery-index">
@@ -347,6 +363,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!-- //result  content (package) -->
+
+	<div>
+		<h3 class="agileits-title text-center" id="graph">use of plotly for dynamic graph</h3>
+		<div align="center">
+			<button class="btn vtn-primary" onclick="line_chart('fig', 'open')">open</button>
+			<button class="btn vtn-primary" onclick="line_chart('fig', 'high')">high</button>
+			<button class="btn vtn-primary" onclick="line_chart('fig', 'low')">low</button>
+			<button class="btn vtn-primary" onclick="line_chart('fig', 'close')">close</button>
+			<button class="btn vtn-primary" onclick="candlestick_chart('Candlestick')">all</button>
+		</div>
+		<div id="fig"></div>
+		<div id="Candlestick"></div>
+	</div>
 
 	<!-- result picure (gallery)-->
 	<div class="agile-section gallery" id="gallery">
@@ -453,12 +482,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="col-md-7 col-sm-7 w3_agileits-team-head">
 				<h5>BDSE08
 					<br>Team 1</h5>
-				<p class="w-text">bala bala bala bala bala bala bala bala bala bala bala bala bala bala bala bala bala bala bala bala bala bala bala bala
-					bala bala bala bala bala bala bala bala bala bala bala bala that high
-				</p>
-				<div class="w3-team w3l-button">
+				<p class="w-text">Due to our different background, we can approach the subject from different angles. Here come our team members introduction.</p>
+				<!-- <div class="w3-team w3l-button">
 					<a href="#" data-toggle="modal" data-target="#myModal">know more about team</a>
-				</div>
+				</div> -->
 				<!--team leader-->
 				<div class="col-sm-6 team-grids team-row">
 					<h5 style="color:#fe533d">曾丹瑋</h5>
@@ -688,7 +715,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div> -->
 	<div class="agileits-map">
-		<h3 class="agileits-title text-center">locate us</h3>
+		<h3 class="agileits-title text-center">Our Locations</h3>
 		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12515.457151767101!2d121.54458384652077!3d25.03604848725822!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xedc006d25a9e35df!2z6LOH562W5pyDIOaVuOS9jeaVmeiCsueglOeptuaJgCDmlbjkvY3kurrmiY3ln7nogrLkuK3lv4M!5e0!3m2!1szh-TW!2stw!4v1535701840398"
 		 style="border:0" allowfullscreen></iframe>
 	</div>
@@ -699,12 +726,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="footer-cpy text-center">
 		<div class="social_banner">
 			<ul class="social_list abt-social-icons">
-					<a href="#" class="google">
+					<a target="_blank" href="https://www.google.com/" class="google">
 						<span class="fa fa-google" aria-hidden="true"></span>
 					</a>
 				</li>
 				<li>
-					<a href="#" class="github">
+					<a target="_blank" href="http://github.com" class="github">
 						<span class="fa fa-github" aria-hidden="true"></span>
 					</a>
 				</li>
@@ -721,7 +748,85 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- js -->
 	<script src="/static/js/jquery-2.2.3.min.js"></script>
 	<!-- //js -->
-	
+
+	<!--plotly graph-->
+	<script>
+		function line_chart(id, arg){
+			var ele = document.getElementById(id)
+			var data = []
+			if (arg == 'open')
+				data = {{ open }};
+			else if (arg == "high")
+				data = {{ high }};
+			else if (arg == "low")
+				data = {{ low }};
+			else
+				data = {{ close }};
+
+			var trace = []
+			trace[0] = {
+				x: {{ date|safe }},
+				y: data,
+				type: 'line',
+				name: arg,
+			}
+
+			Plotly.plot(ele, trace)
+		}
+
+		function candlestick_chart(id){
+			var ele = document.getElementById(id)
+
+			var trace = []
+			trace[0] = {
+				x: {{ date|safe }},
+				increasing: {line: {color: 'red'}},
+  				decreasing: {line: {color: 'green'}},
+				open: {{ open }},
+				high: {{ high }},
+				low: {{ low }},
+				close: {{ close }},
+				type: 'candlestick',
+				xaxis: 'x',
+				yaxis: 'y',
+			}
+
+			var layout = {
+				xaxis: {
+				    autorange: true,
+					title: 'Date',
+					rangeselector: {
+						x: 0,
+						y: 1.2,
+						xanchor: 'left',
+						font: {size:8},
+						buttons: [{
+							step: 'month',
+							stepmode: 'backward',
+							count: 1,
+							label: '1 month'
+						}, {
+							step: 'month',
+							stepmode: 'backward',
+							count: 6,
+							label: '6 months'
+						}, {
+							step: 'all',
+							label: 'All dates'
+						}]
+					  }
+				  },
+				yaxis: {
+				    autorange: true,
+				    type: 'linear'
+				},
+			}
+
+			Plotly.plot(ele, trace, layout)
+		}
+
+	</script>
+
 	<!-- gallery light box -->
 	<script src="/static/js/lightbox-plus-jquery.min.js"></script>
 	

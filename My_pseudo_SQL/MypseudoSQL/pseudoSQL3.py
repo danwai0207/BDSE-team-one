@@ -110,7 +110,7 @@ class Table:
         :return: table
         """
         where_table = Table(self.columns)
-        where_table.rows = filter(predicate, self.rows)
+        where_table.rows = list(filter(predicate, self.rows))
         return where_table
 
     def group_by(self, group_by_columns, aggregates, having=None):
@@ -120,7 +120,7 @@ class Table:
             key = tuple(row[column] for column in group_by_columns)
             grouped_rows[key] += [row]
 
-        result_table = Table(group_by_columns + aggregates.keys())
+        result_table = Table(group_by_columns + list(aggregates.keys()))
 
         for key, rows in grouped_rows.items():
             if having is None or having(rows):
